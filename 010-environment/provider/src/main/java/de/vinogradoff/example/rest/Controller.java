@@ -1,6 +1,5 @@
 package de.vinogradoff.example.rest;
 
-import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
