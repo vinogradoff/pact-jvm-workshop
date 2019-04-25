@@ -8,6 +8,47 @@ import java.util.Date;
 @RestController
 public class Controller {
 
+	/*
+
+Tasks
+
+refactor to return SERVICE_UNAVAILABLE 503 HTTP Code depending on Status of services (static variable)
+
+
+	*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   public static Boolean offline=false; // just for example's sake - it is not a good pattern
 
   @RequestMapping(value = "/weather/now", method = RequestMethod.GET)
