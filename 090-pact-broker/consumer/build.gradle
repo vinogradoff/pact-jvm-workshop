@@ -1,0 +1,64 @@
+plugins {
+    id 'org.springframework.boot' version '2.1.4.RELEASE'
+    id 'java'
+    // pact-gradle plugin for publishing to broker
+    id "au.com.dius.pact" version "3.6.5"
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+// needed to avoid conflicts with spring junit5 dependencies
+ext['junit-jupiter.version'] = '5.4.2'
+
+bootJar {
+    archiveBaseName = 'newsportal-service'
+    archiveVersion =  '1.0.0'
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    implementation "org.springframework.boot:spring-boot-starter-web"
+
+    // add dependencies on junit5
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.4.2'
+    // assertions library
+    testImplementation "org.assertj:assertj-core:3.12.2"
+    // library for api tests
+    testImplementation 'io.rest-assured:rest-assured:3.3.0'
+    // library for mocks with junit 5
+    testImplementation "org.mockito:mockito-core:2.21.0"
+    testImplementation "org.mockito:mockito-junit-jupiter:2.23.4"
+    // pact library for junit 5
+    testImplementation "au.com.dius:pact-jvm-consumer-junit5_2.12:3.6.5"
+    // Lambda DSL for pact
+    testImplementation "au.com.dius:pact-jvm-consumer-java8_2.12:3.6.5"
+
+}
+
+test {
+    useJUnitPlatform()   // configure JUnit5
+
+    // don't merge with existing pact file, always overwrite.
+    // which don't let you to have pact fragments...
+    // systemProperty "pact.writer.overwrite",true
+}
+
+pact {
+
+    publish {
+        pactDirectory = 'build/pact-files' // defaults to $buildDir/pacts
+        pactBrokerUrl = 'https://comaqa.pact.dius.com.au/'
+        pactBrokerUsername = pactBrokerUser
+        pactBrokerPassword = pactBrokerPwd
+    }
+
+}
+
