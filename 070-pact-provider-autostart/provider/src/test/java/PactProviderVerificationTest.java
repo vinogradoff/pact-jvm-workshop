@@ -19,6 +19,42 @@ public class PactProviderVerificationTest {
     context.verifyInteraction();
   }
 
+  @BeforeEach
+  void before(PactVerificationContext context) throws MalformedURLException {
+    context.setTarget(HttpTestTarget.fromUrl(new URL("http://localhost:8888")));
+    // or something like
+    // context.setTarget(new HttpTestTarget("localhost", myProviderPort, "/"));
+  }
+
+/*
+Task 
+
+add @BeforeAll method that starts the provider service
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   @BeforeAll
   static void setUpService() {
     //Run DB, create schema
@@ -27,12 +63,7 @@ public class PactProviderVerificationTest {
     SpringApplication.run(ApplicationProvider.class, new String[]{});
   }
 
-  @BeforeEach
-  void before(PactVerificationContext context) throws MalformedURLException {
-    context.setTarget(HttpTestTarget.fromUrl(new URL("http://localhost:8888")));
-    // or something like
-    // context.setTarget(new HttpTestTarget("localhost", myProviderPort, "/"));
-  }
+  
 
 
 }

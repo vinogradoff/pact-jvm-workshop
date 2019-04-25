@@ -27,6 +27,46 @@ public class PactConsumerWeatherTest {
   Map<String, String> headers = MapUtils.putAll(new HashMap<String, String>(),
           new String[]{"Content-Type", "application/json"});
 
+  /*
+
+Tasks
+
+Create two pact interatcion for different states: "Sensor are functioning" and "Sensors are down"
+
+1. add second  pact method
+2. use given in both pact methods
+3. add second test for consumer method
+4. annotate test methods with @PactTestFor(pactMethod)
+
+  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   @Pact(provider="weather_service", consumer="news_portal")
   public RequestResponsePact createPact(PactDslWithProvider builder) {
 
@@ -77,7 +117,7 @@ public class PactConsumerWeatherTest {
 
   @Test
   @PactTestFor(pactMethod = "createPact")
-  void unitTestCustomerMethod(MockServer mockServer) {
+  void unitTestConsumerMethod(MockServer mockServer) {
     Controller ctrl=new Controller();
     ctrl.serviceUrl=mockServer.getUrl()+"/weather/now";
 
@@ -90,7 +130,7 @@ public class PactConsumerWeatherTest {
 
   @Test
   @PactTestFor(pactMethod = "createPactServerDown")
-  void unitTestCustomerMethodServerDown(MockServer mockServer) {
+  void unitTestConsumerMethodServerDown(MockServer mockServer) {
     Controller ctrl=new Controller();
     ctrl.serviceUrl=mockServer.getUrl()+"/weather/now";
 

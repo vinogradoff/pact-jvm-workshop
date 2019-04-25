@@ -7,6 +7,36 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class IntegrationTest {
 
+
+ /*
+ Task.
+ Write an end2end test for news portal
+ Write direct test for weather service
+ Write a test for the method of consumer's controller
+  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  // Task. Write an end2end test for news portal
 
  @Test

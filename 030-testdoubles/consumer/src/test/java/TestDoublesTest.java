@@ -11,6 +11,42 @@ import static org.assertj.core.api.Assertions.assertThat;
 @ExtendWith(MockitoExtension.class)
 public class TestDoublesTest {
 
+  /*
+
+Tasks
+
+Write 1-2 tests mocking RestTemplate call in Controller (for example with Mockito)
+
+  */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   @Mock
   RestTemplate rest;
 

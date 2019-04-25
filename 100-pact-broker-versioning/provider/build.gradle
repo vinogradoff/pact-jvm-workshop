@@ -36,6 +36,42 @@ dependencies {
 
 }
 
+
+/*
+
+Task
+
+configure versioning as <project.version>-<git_commit_hash>
+use it in publishing result to broker
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 project.version="0.1.0"
 
 def getGitHashForLastCommit = { ->

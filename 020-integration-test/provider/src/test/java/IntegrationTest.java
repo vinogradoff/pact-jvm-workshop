@@ -6,7 +6,33 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class IntegrationTest {
 
- // Task. Write direct test for weather service
+ /* Task.
+
+ Write direct api test for weather service
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
  @Test
   void weatherServiceShouldReturn(){
   Weather weather=get("http://localhost:8888/weather/now?city=Minsk")

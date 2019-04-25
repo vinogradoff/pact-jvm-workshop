@@ -51,6 +51,41 @@ test {
     // systemProperty "pact.writer.overwrite",true
 }
 
+
+/*
+
+Task 
+
+
+configure pact publishing
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 pact {
 
     publish {

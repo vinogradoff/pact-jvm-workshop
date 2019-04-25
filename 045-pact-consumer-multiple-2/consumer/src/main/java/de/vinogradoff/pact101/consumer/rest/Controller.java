@@ -7,7 +7,50 @@ import org.springframework.web.client.RestTemplate;
 @RestController
 public class Controller {
 
+/*
+Tasks
+
+Refactor this class to be able to mock RestTemplate (Prepare for mock injection)
+
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   private RestTemplate rest;
+
 
   public Controller(){
     rest=new RestTemplate();

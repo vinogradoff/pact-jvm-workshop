@@ -13,6 +13,48 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 @Provider("weather_service")
+
+
+/* 
+Tasks
+configure PactBroker
+
+1. using plain user/pwd
+2. using secure  way with system properties
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @PactBroker(host = "comaqa.pact.dius.com.au",port = "443",scheme = "https",
         authentication = @PactBrokerAuth(username = "${pactbroker.auth.username}",
                 password = "${pactbroker.auth.password}"))

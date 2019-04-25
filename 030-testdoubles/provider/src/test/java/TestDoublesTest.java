@@ -6,6 +6,51 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class TestDoublesTest {
 
+
+/*
+Tasks
+
+Write normal unit test for weatherNow method.
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   @Test
   void unitTest(){
     Weather weather=new Controller().weatherNow("Cairo");

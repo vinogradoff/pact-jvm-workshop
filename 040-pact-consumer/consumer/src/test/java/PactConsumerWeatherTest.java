@@ -17,6 +17,50 @@ import java.util.Map;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+/*
+
+Tasks:
+
+With this class do:
+
+public class PactConsumerWeatherTest {
+}
+
+1. Annotate to be used as a pact test
+2. Create method for defining Pact method(PactDSLWithProvider builder) returning RequestResponsePact
+3.  Write unit test on on consumer method testmethod(MockServer mockServer)
+4. (optional) write test method using plain HttpResponse/Request classes that creates pact, without testing consumer method
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @ExtendWith(PactConsumerTestExt.class)
 @PactTestFor(providerName = "weather_service")
 @PactFolder("build/pact-files")
@@ -53,7 +97,7 @@ public class PactConsumerWeatherTest {
 
 
   @Test
-  void unitTestCustomerMethod(MockServer mockServer) {
+  void unitTestConsumerMethod(MockServer mockServer) {
     Controller ctrl=new Controller();
     ctrl.serviceUrl=mockServer.getUrl()+"/weather/now";
     Weather weather=  ctrl.weatherNow("Moscow2");

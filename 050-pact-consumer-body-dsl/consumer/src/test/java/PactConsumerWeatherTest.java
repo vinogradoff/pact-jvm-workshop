@@ -29,6 +29,44 @@ public class PactConsumerWeatherTest {
   @Pact(provider="weather_service", consumer="news_portal")
   public RequestResponsePact createPact(PactDslWithProvider builder) {
 
+
+/*
+
+Tasks
+
+1. Use old Pact Body DSL instead of fixed response
+2. Do the same with Lambda Java 8 Body DSL
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     return builder
             .uponReceiving("Request the weather conditions for city")
             .path("/weather/now")
@@ -60,7 +98,7 @@ public class PactConsumerWeatherTest {
 
 
   @Test
-  void unitTestCustomerMethod(MockServer mockServer) {
+  void unitTestConsumerMethod(MockServer mockServer) {
     Controller ctrl=new Controller();
     ctrl.serviceUrl=mockServer.getUrl()+"/weather/now";
     Weather weather=  ctrl.weatherNow("Moscow2");

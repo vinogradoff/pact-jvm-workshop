@@ -41,6 +41,45 @@ public class PactConsumerWeatherTest {
             .toPact();
   }
 
+
+/* 
+Tasks
+
+
+1. Create the second interaction as a method
+2. Create the second test for consumer testing with second interaction 
+3. Annotate test methods with @PactForTest (pactMethod)
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   @Pact(provider="weather_service", consumer="news_portal")
   public RequestResponsePact createPactPart2(PactDslWithProvider builder) {
 
@@ -70,7 +109,7 @@ public class PactConsumerWeatherTest {
 
   @Test
   @PactTestFor(pactMethod = "createPact")
-  void unitTestCustomerMethod(MockServer mockServer) {
+  void unitTestConsumerMethod(MockServer mockServer) {
     Controller ctrl=new Controller();
     ctrl.serviceUrl=mockServer.getUrl()+"/weather/now";
     Weather weather=  ctrl.weatherNow("Moscow2");
@@ -82,7 +121,7 @@ public class PactConsumerWeatherTest {
 
   @Test
   @PactTestFor(pactMethod = "createPactPart2")
-  void unitTestCustomerMethod2(MockServer mockServer) {
+  void unitTestConsumerMethod2(MockServer mockServer) {
     Controller ctrl=new Controller();
     ctrl.serviceUrl=mockServer.getUrl()+"/weather/now";
     Weather weather=  ctrl.weatherNow("Moscow2");
