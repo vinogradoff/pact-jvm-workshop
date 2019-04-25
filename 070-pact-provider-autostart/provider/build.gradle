@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.1.4.RELEASE'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+// needed to avoid conflicts with spring junit5 dependencies
+ext['junit-jupiter.version'] = '5.4.2'
+
+bootJar {
+    archiveBaseName = 'weather-rest-service'
+    archiveVersion =  '1.0.0'
+}
+
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // add dependencies on junit5
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.4.2'
+    // assertions library
+    testImplementation "org.assertj:assertj-core:3.12.2"
+    // library for api tests
+    testImplementation 'io.rest-assured:rest-assured:3.3.0'
+    // pact provider for junit5
+    testImplementation "au.com.dius:pact-jvm-provider-junit5_2.12:3.6.5"
+
+}
+
+test {
+    useJUnitPlatform()   // configure JUnit5
+}
